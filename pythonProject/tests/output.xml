@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-26T15:06:02.641063" rpa="false" schemaversion="5">
+<suite id="s1" name="Test1" source="/Users/claudiamejia/PycharmProjects/RobotFramework/pythonProject/tests/test1.robot">
+<test id="s1-t1" name="Validate Succesful Login" line="7">
+<kw name="open the browser with the Mortage payment url">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-07-26T15:06:02.943813" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>Service(/Users/claudiamejia/Downloads/chromedriver-mac-x64/chromedriver)</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-07-26T15:06:02.943486" elapsed="5.968933"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-07-26T15:06:08.913781" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-07-26T15:06:08.913164" elapsed="1.438728"/>
+</kw>
+<status status="PASS" start="2024-07-26T15:06:02.942300" elapsed="7.409812"/>
+</kw>
+<status status="PASS" start="2024-07-26T15:06:02.941417" elapsed="7.411032"/>
+</test>
+<doc>To Validate The Login Form</doc>
+<status status="PASS" start="2024-07-26T15:06:02.644753" elapsed="7.708424"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
