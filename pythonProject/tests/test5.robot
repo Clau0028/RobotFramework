@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    To Validate The Login Form
 Library          SeleniumLibrary
+Library    DataDriver    file=resources/data.csv    encoding=utf_8    dialect=unix
 Test Teardown    Close Browser
 Test Template    Validate Unsuccessful Login
 
@@ -8,10 +9,10 @@ Test Template    Validate Unsuccessful Login
 *** Variables ***
 ${Error_Message_Login}    xpath://body/div[@id='login']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]
 
-*** Test Cases ***    username    password
-Invalid Username    jdjjfjje        Learning
-Invalid Password    rahulshetty     khjhdhdh
-Special Characters    @=&           Learning
+
+*** Test Cases ***    
+Login With User ${username} And password ${password}
+
     
    
 *** Keywords ***
