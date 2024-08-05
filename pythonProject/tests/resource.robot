@@ -16,5 +16,5 @@ open the browser with the Mortgage payment url
     Create Webdriver    Chrome    Service(/Users/claudiamejia/Downloads/chromedriver-mac-x64/chromedriver)
     Go To               ${url}
 
-#Close Browser Session
-        #Close Browser
+Close Browser Session
+        Close Browser

@@ -2,27 +2,36 @@
 Documentation    To Validate The Login Form
 Library          SeleniumLibrary
 Test Teardown    Close Browser
+Test Template    Validate Unsuccessful Login
 
 
 *** Variables ***
 ${Error_Message_Login}    xpath://body/div[@id='login']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]
 
-*** Test Cases ***
+*** Test Cases ***    username    password
+Invalid Username    jdjjfjje        Learning
+Invalid Password    rahulshetty     khjhdhdh
+Special Characters    "=&           Learning
+    
+   
+*** Keywords ***
+ 
 Validate Unsuccessful Login
+    [Arguments]    ${username}    ${password}
     open the browser with the Mortgage payment url
-    Fill the login form
+    Fill the login form    ${username}    ${password}
     wait until it checks and display error message
     verify error message is correct
 
-*** Keywords ***
 open the browser with the Mortgage payment url
     Create Webdriver    Chrome    Service(/Users/claudiamejia/Downloads/chromedriver-mac-x64/chromedriver)
     Go To               https://rahulshettyacademy.com/loginpagePractise/
 
 Fill the login form
-    Input Text        id:username    rahulshettyacademy
-    Input Password    id:password    53748959
-    Click Button      signInBtn
+    [Arguments]    ${username}    ${password}
+    Input Text        xpath://input[@id='username']    ${username}
+    Input Password    xpath://input[@id='password']    ${password}
+    Click Button      xpath://input[@id='signInBtn']
 
 wait until it checks and display error message
     Wait Until Element Is Visible    ${Error_Message_Login}
